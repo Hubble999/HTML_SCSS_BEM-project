@@ -35,6 +35,12 @@ body {
   height: 100%;
 }
 
+.container-fluid { //указали максимальную ширину если у юзера будет больше картинки не расползутся
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
