@@ -17,6 +17,9 @@
     padding: 0;
     cursor: pointer;
   }
+  &__btn-menu {
+    display: none;
+  }
 }
 
 .logo {
@@ -53,6 +56,10 @@
   }
 }
 
+.menu-small {
+  display: none;
+}
+
 .footer {
   background-color: #dfdfdf;
   &__content {
@@ -61,6 +68,7 @@
   }
   &__inner {
     display: flex;
+    justify-content: space-between;
   }
   &__copyright {
     display: flex;
@@ -103,7 +111,7 @@
     padding: 6px 10px 6px 18px;
     margin-right: 9px;
     border-radius: 20px;
-    width: 368px;
+    width: 250px;
     background-color: transparent; // означает прозрачный фон, будет такой же цвет как и у контейнера в котором находится элемент
     border: 1px solid rgba($title-black, 0.7);
     outline: none; // убирает рамки обводку при нажатии
@@ -130,8 +138,8 @@
     flex-direction: column;
     justify-content: space-between;
     width: 108px;
-    margin-left: 99px;
-    margin-right: 176px;
+    //margin-left: 99px;
+    //margin-right: 176px;
   }
   &__social-link,
   &__menu-link {
@@ -594,8 +602,90 @@
   &__popup-img {
     position: absolute;
     left: 50%;
-     top: 50%;
+    top: 50%;
     width: 80px;
     height: 80px;
   }
 }
+
+.inspiration {
+  position: relative;
+  padding-top: 100px;
+  &::after {
+    z-index: -10;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 335px;
+    background-image: url('../images/insperation.jpg');
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__images {
+    margin-right: 75px;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 60px;
+    color: $title-black;
+    @extend %title-font;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #6d7278;
+      width: 200px;
+      height: 1px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 26px;
+    color: $default;
+    margin-bottom: 30px;
+  }
+  &__content {
+    max-width: 825px;
+  }
+  &__item-text {
+    font-size: 16px;
+    line-height: 23px;
+    color: $title-black;
+    @extend %title-font;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #6d7278;
+      width: 400px;
+      height: 2px;
+    }
+  }
+}
+
+.partners {
+  height: 330px;
+  &__items {
+    display: flex;
+  }
+  &__image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@import 'media';
