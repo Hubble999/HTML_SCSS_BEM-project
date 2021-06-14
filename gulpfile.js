@@ -80,6 +80,7 @@ function build() {
       'app/*.html',
     ],
     { base: 'app' },
+    { allowEmpty: true },
   ).pipe(dest('dist'));
 }
 
